@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  background: rgb(51, 14, 75);
+  background: linear-gradient(
+    189deg,
+    rgba(51, 14, 75, 1) 0%,
+    rgba(179, 15, 15, 1) 50%,
+    rgba(200, 140, 55, 1) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.mainBox {
+  width: 600px;
+  height: 600px;
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  border-width: 5px;
+  border-style: solid;
+  border-image: linear-gradient(to bottom, red, rgba(0, 0, 0, 0)) 1 100%;
+}
+.square {
+  width: 196px;
+  height: 196px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-width: 5px;
+  border-style: solid;
+  color: rgb(7 76 88);
+  font-size: 196px;
+  cursor: pointer;
+}
+.win {
+  background-color: #00ff00;
+}
+.square:first-child,
+.square:nth-child(3),
+.square:nth-child(7),
+.square:nth-child(9) {
+  border: none;
+}
+.square:nth-child(6),
+.square:nth-child(4) {
+  border-right: none;
+  border-left: none;
+}
+.square:nth-child(2),
+.square:nth-child(8) {
+  border-top: none;
+  border-bottom: none;
+}
+
+@media screen and (max-width: 750px) {
+  body {
+    width: 100%;
+  }
+  .mainBox {
+    width: auto;
+    height: auto;
+    border: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .square {
+    width: 100px;
+    height: 100px;
+    font-size: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
